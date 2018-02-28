@@ -245,3 +245,8 @@ table {
     margin-left: 0px;
   }
 }
+@media only screen and (max-height: 710px) {
+  .signup-wrapper {
+    margin-top: 32px;
+  }
+}
