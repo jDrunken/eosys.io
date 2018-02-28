@@ -104,13 +104,15 @@ table {
 }
 .content-1 {
   margin-top: 32px;
-  opacity: 0.8;
 }
 .content-2 {
   margin-top: 8px;
+}
+.content-3 {
+  margin-top: 8px;
   opacity: 0.8;
 }
-.content-2::after {
+.content-3::after {
   content: '';
   width: 128px;
   border-bottom: 1px solid white;
@@ -214,10 +216,10 @@ table {
   .sub-title {
     font-size: 16px;
   }
-  .content-1, .content-2 {
+  .content-1, .content-2, .content-3 {
     font-size: 12px;
   }
-  .content-2::after {
+  .content-3::after {
     width: 80px;
   }
   .signup-wrapper {
