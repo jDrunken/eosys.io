@@ -183,11 +183,12 @@ table {
   vertical-align: middle;
 }
 #mc_embed_signup .subscribe-btn input {
+    height: 50px;
+    padding: 0px 28px;
     background-color: transparent;
     border: 1px solid white;
     border-radius: 30px;
     color: white;
-    padding: 14px 28px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
