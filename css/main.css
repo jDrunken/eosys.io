@@ -261,3 +261,7 @@ table {
     margin-top: 32px;
   }
 }
+
+#mce-EMAIL {
+  outline: none;
+}
