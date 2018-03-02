@@ -23,6 +23,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow: hidden;
 }
 body {
   /*font-family: "SpoqaHanSans","Helvetica Neue","Apple SD Gothic Neo","SEC","SamsungKorean","Noto Sans CJK KR","Source Han Sans","본고딕","Segoe UI","Roboto","나눔바른고딕","나눔고딕","맑은 고딕","돋움","Dotum",sans-serif;*/
