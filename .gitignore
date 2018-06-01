@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/osx
 
+# 생성되는 repo
+deploy
+
 ### OSX ###
 *.DS_Store
 .AppleDouble

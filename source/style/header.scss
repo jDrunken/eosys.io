@@ -1,0 +1,387 @@
+$mobile_gnb_height : 48px;
+
+// header styling
+header {
+    box-sizing:border-box;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:10;
+    overflow:hidden;
+
+    @include media_query($device_small) {
+        height:$mobile_gnb_height;
+
+        &.invert {
+            height:calc(#{$mobile_gnb_height} * 2);
+        }
+    }
+
+    @include media_query($device_middle) {
+        height:60px;
+        padding:0 32px;
+
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    }
+
+    @include media_query($device_large) {
+        height:80px;
+        padding:0 32px;
+
+        display:flex;
+        align-items:center;
+    }
+
+    div.container {
+        height:inherit;
+        position:relative;
+    }
+    // coloring
+    h1 a,
+    nav a {
+        color:#fff;
+    }
+
+    h1 {
+        font-size:0;
+
+        @include media_query($device_small) {
+            padding:14px 20px;
+        }
+
+        a {
+            display:block;
+
+            @include media_query($device_small) {
+                width:69px;
+                height:20px;
+            }
+
+            @include media_query($device_middle) {
+                width:74px;
+                height:21px;
+            }
+
+            @include media_query($device_large) {
+                width:108px;
+                height:30px;
+            }
+
+            text-indent:-999em;
+            display:inline-block;
+            background:url('../image/logo_eosys_white.png') left top no-repeat transparent;
+
+            background-size:contain;
+        }
+    }
+}
+
+header nav {
+    display:block;
+    box-sizing:border-box;
+    @include media_query($device_small) {
+        display:none;
+        border-top:1px solid #f2f2f2;
+        white-space:nowrap;
+        -webkit-overflow-scrolling:touch;
+        overflow-x:scroll;
+        height:80px;
+
+        &:before {
+            display:block;
+            position:absolute;
+            left:0;
+            width:6px;
+            height:$mobile_gnb_height;
+        }
+    }
+
+
+    @include media_query($device_large) {
+        flex:1;
+        margin-left:40px;
+        font-size:0;
+    }
+
+    a {
+        font-family:$em-font;
+        font-size:rem(13);
+        font-weight:300;
+
+        @include media_query($device_small) {
+            display:inline-block;
+        }
+
+        &.viewing {
+            font-weight:500;
+
+            @include media_query($device_small) {
+                font-weight:700;
+                position:relative;
+
+                &:before {
+                    content:'';
+                    display:block;
+
+                    background:#000;
+
+                    position:absolute;
+                    bottom:1px;
+                    left:0;
+                    right:0;
+
+                    height:1px;
+                    width:inherit;
+
+                }
+            }
+        }
+    }
+
+}
+
+header nav .link {
+
+    @include media_query($device_small) {
+        display:inline;
+    }
+    @include media_query($device_middle) {
+        display:inline-block;
+    }
+
+}
+
+header nav .main.link {
+
+    @include media_query($device_large) {
+        float:left;
+    }
+
+    a {
+        font-family:$em-font;
+        margin:0 12px;
+
+        @include media_query($device_small) {
+            line-height:$mobile_gnb_height;
+
+            &:first-child {
+                margin-left:20px;
+            }
+        }
+
+        @include media_query($device_middle) {
+            margin:0 6px;
+        }
+
+        @include media_query($device_large) {
+            display:inline-block;
+
+            &:first-child {
+                margin-left:0;
+            }
+
+            &:last-child {
+                margin-right:0;
+            }
+        }
+
+        &:first-letter {
+            text-transform:uppercase;
+        }
+
+    }
+}
+
+header nav .sub.link {
+
+    @include media_query($device_small) {
+        padding:0 1em 0.6em;
+        text-align:right;
+    }
+
+    @include media_query($device_middle) {
+        margin-left:1em;
+    }
+
+    @include media_query($device_large) {
+        float:right;
+    }
+
+    ul, li {
+        margin:0;
+        padding:0;
+        display:inline-block;
+        list-style-type:none;
+    }
+
+    ul {
+        margin-left:40px;
+        position:relative;
+
+        &:before {
+            content:'';
+            display:block;
+            width:1px;
+            height:12px;
+            background-color:#fff;
+            position:absolute;
+            left:-20px;
+            top:50%;
+            transform:translateY(-50%);
+        }
+
+        @include media_query($device_middle) {
+            margin-left:10px;
+
+            &:before {
+                display:none;
+            }
+        }
+
+    }
+
+    li {
+        margin-left:16px;
+
+        &:first-child {
+            margin-left:0;
+        }
+        @include media_query($device_middle) {
+            margin-left:4px;
+        }
+
+
+
+    }
+
+    .lang.en {
+        margin-left:12px;
+        text-transform:uppercase;
+
+        @include media_query($device_middle) {
+            margin-left:6px;
+        }
+
+
+    }
+}
+
+header nav .sub.link a {
+    &.ci.medium {
+        width:16px;
+        height:13px;
+        background-image:url('../image/ci_medium_white_transparent_16_13.png');
+        background-size:contain;
+    }
+
+    &.ci.twitter {
+        width:16px;
+        height:13px;
+        background-image:url('../image/ci_twitter_white_transparent_16_13.png');
+        background-size:contain;
+    }
+
+    &.ci.telegram {
+        width:16px;
+        height:13px;
+        background-image:url('../image/ci_telegram_white_transparent_16_14.png');
+        background-size:contain;
+    }
+}
+
+// 언어셋에 따라서 글꼴을 굵게 씀
+.lang.ko:lang(ko){
+    font-weight:700;
+}
+.lang.en:lang(en) {
+    font-weight:700;
+}
+
+
+// 반전시 컬러셋을 지정함
+header.invert {
+    background-color:#fff;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+
+    h1 a {
+        background-image:url('../image/logo_eosys_black.png');
+    }
+
+
+    nav {
+        display:block;
+    }
+
+    h1 a,
+    nav a {
+        color:#333;
+    }
+
+    .sub.link ul:before {
+        background-color:#bbb;
+    }
+
+    .sub.link a {
+        &.ci.medium {
+            background-image:url('../image/ci_medium_black_transparent_16_13.png');
+        }
+
+        &.ci.twitter {
+            background-image:url('../image/ci_twitter_black_transparent_16_13.png');
+        }
+
+        &.ci.telegram {
+            background-image:url('../image/ci_telegram_black_transparent_16_14.png');
+        }
+    }
+
+    a.viewing {
+        font-weight:500;
+    }
+}
+
+
+
+// 모바일일 경우 subscribe만 우상단으로 올린다.
+header.invert a[href="#subscribe"][aria-hidden] {
+    @include media_query($device_small) {
+
+        position:absolute;
+        top:14px;
+        right:20px;
+
+        z-index:15;
+
+        // 이미지로 대체해야됨
+        display:block;
+        padding:0;
+        margin:0;
+
+        width:20px;
+        height:20px;
+
+        text-indent:-999em;
+
+        background:url('../image/icon_mail_black_transparent_16_16.png') center center no-repeat transparent;
+        background-size:16px 16px;
+
+        &:before,
+        &:after {
+            display:none;
+        }
+
+        // animation
+        transition:transform 200ms ease-out;
+
+        &:active,
+        &.viewing {
+            transform:rotate(-15deg) scale(1.2);
+        }
+    }
+}
+header > a[href="#subscribe"] {
+    display:none;
+}

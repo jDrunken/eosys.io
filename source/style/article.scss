@@ -1,0 +1,1038 @@
+// article styling
+
+// reset
+article {
+    p {
+        margin:0;
+        padding:0;
+    }
+}
+
+// common
+article section {
+    box-sizing:border-box;
+
+    @include media_query($device_small) {
+        padding:calc(48px * 2.5) 20px;
+    }
+
+    @include media_query($device_middle) {
+        padding:calc(48px * 2) 40px;
+    }
+
+    @include media_query($device_large) {
+        padding:96px 160px;
+    }
+}
+
+article section {
+    &.project,
+    &.news,
+    &.consortium {
+    background-color:#f8fafc;
+    }
+}
+
+// summary
+article .summary {
+    position:relative;
+    text-align:center;
+    background-color:#fff !important;
+    background-position:center center;
+    color:#fff;
+    background-image:url('../image/main_bg.png');
+
+    @include media_query($device_small) {
+        font-size:rem(16);
+        padding-top:150px;
+        padding-bottom:150px;
+        background-size:cover;
+    }
+
+    @include media_query($device_middle) {
+        font-size:rem(20);
+        padding-top:180px;
+        padding-bottom:180px;
+        background-size:cover;
+    }
+
+    @include media_query($device_large) {
+        height:720px;
+        padding-top:327px;
+        background-size:100%;
+    }
+
+    h2 {
+        color:#fff;
+        font-weight:500;
+        font-family:$em-font;
+        text-shadow:0 0 20px rgba(0,0,0,0.4);
+
+        @include media_query($device_small) {
+            font-size:rem(16);
+        }
+
+        @include media_query($device_large) {
+            font-size:rem(56);
+        }
+    }
+
+    p {
+        margin:0;
+        font-weight:300;
+        padding-top:16px;
+        text-shadow:0 0 10px rgba(0,0,0,0.4);
+
+        @include media_query($device_small) {
+            font-size:rem(10);
+        }
+
+        @include media_query($device_large) {
+            font-size:rem(20);
+        }
+    }
+}
+
+// about
+article .about {
+    position:relative;
+
+    h2 {
+        @include screen_reader;
+
+        & + p {
+            font-weight:300;
+            line-height:1.25;
+            color:#333;
+
+            @include media_query($device_small) {
+                font-size:rem(18);
+            }
+
+            @include media_query($device_middle) {
+                font-size:rem(22);
+
+                br {
+                    display:none;
+                }
+            }
+
+            @include media_query($device_large) {
+                font-size:rem(32);
+            }
+        }
+    }
+
+    div.detail {
+        @include media_query($device_middle) {
+            margin-top:48px;
+        }
+
+        @include media_query($device_small) {
+            margin-top:48px;
+        }
+
+        @include media_query($device_large) {
+            margin-top:72px;
+        }
+        overflow:hidden;
+        box-sizing:border-box;
+
+        .description {
+            box-sizing:border-box;
+
+            @include media_query($device_small) {
+                margin-bottom:48px;
+            }
+
+            @include media_query($device_middle) {
+                margin-bottom:48px;
+
+                width:calc((100% - 48px)/2);
+                &:nth-of-type(2n+1) {
+                    float:left;
+                }
+
+                &:nth-of-type(2n) {
+                    float:right;
+                }
+            }
+
+            @include media_query($device_large) {
+                margin-top:72px;
+                width:calc((100% - 96px)/2);
+
+                &:nth-of-type(2n+1) {
+                    float:left;
+                }
+
+                &:nth-of-type(2n) {
+                    float:right;
+                }
+            }
+
+            // background image
+            h3 {
+                background-position:left 0;
+                background-repeat:no-repeat;
+                background-color:transparent;
+                background-size:16px 16px;
+
+                &.bg_icon {
+                    &.group {
+                        background-image:url('../image/icon_group_lightblue_transparent_16_16.png')
+                    }
+
+                    &.server {
+                        background-image:url('../image/icon_server_lightblue_transparent_16_16.png')
+                    }
+
+                    &.desktop {
+                        background-image:url('../image/icon_desktop_lightblue_transparent_16_16.png')
+                    }
+
+                    &.globe {
+                        background-image:url('../image/icon_globe_lightblue_transparent_16_16.png')
+                    }
+                }
+            }
+
+            p {
+                line-height:1.6;
+                color:#666;
+
+                &:lang(ko) {
+                    min-height:60px;
+                }
+
+                &:lang(en) {
+                    min-height:85px;
+                }
+
+                @include media_query($device_small) {
+                    font-size:rem(12);
+                }
+
+                @include media_query($device_middle) {
+                    font-size:rem(13);
+
+                    &:lang(ko) {
+                        min-height:85px;
+                    }
+                }
+
+                @include media_query($device_large) {
+                    font-size:rem(13);
+                }
+
+
+            }
+
+
+        }
+
+        h3 {
+            padding-left:24px;
+            color:#333;
+            padding-bottom:1em;
+            margin-bottom:1em;
+            border-bottom:1px solid #e2e2e2;
+
+            @include media_query($device_small) {
+                font-size:rem(14);
+            }
+
+            @include media_query($device_middle) {
+                font-size:rem(14);
+            }
+
+            @include media_query($device_large) {
+                font-size:rem(16);
+            }
+
+        }
+    }
+
+    a.view_detail {
+        @include media_query($device_small) {
+            margin:0 auto;
+        }
+
+        @include media_query($device_large) {
+            position:absolute;
+            top:29px;
+            right:0;
+        }
+
+    }
+}
+
+// project
+article .project {
+    position:relative;
+
+    @include media_query($device_small) {
+        h2  {
+            text-align:center;
+            font-family:$em-font;
+            text-transform:uppercase;
+            letter-spacing:0.3em;
+            font-weight:400;
+            & + p {
+                display:none;
+            }
+        }
+    }
+
+    @include media_query($device_middle) {
+        h2 {
+            @include screen_reader;
+
+
+            & + p {
+                font-size:rem(24);
+                font-family:$em-font;
+                font-weight:300;
+                text-align:center;
+            }
+        }
+
+        br {
+            display:none;
+        }
+    }
+
+    @include media_query($device_large) {
+        h2 {
+            @include screen_reader;
+
+            & + p {
+                font-size:rem(32);
+                font-family:$em-font;
+                font-weight:300;
+            }
+        }
+    }
+
+
+    dl {
+        @include media_query($device_small) {
+            width:100%;
+            text-align:center;
+        }
+
+        @include media_query($device_middle) {
+            height:120px;
+            text-align:center;
+        }
+
+        @include media_query($device_large) {
+            height:160px;
+        }
+
+        margin:40px auto 0;
+        position:relative;
+        font-size:0;
+    }
+
+    dt {
+        box-sizing:border-box;
+        display:inline-block;
+        padding:0;
+        text-align:center;
+
+        button {
+            border-radius:0;
+            color:#333;
+            padding-bottom:8px;
+            outline:none;
+
+            @include media_query($device_small) {
+                font-size:rem(14);
+                padding-left:2px;
+                padding-right:2px;
+                margin-left:4px;
+                margin-right:4px;
+            }
+
+            @include media_query($device_middle) {
+                font-size:rem(14);
+                padding-left:2px;
+                padding-right:2px;
+                margin-right:28px;
+
+            }
+
+            @include media_query($device_large) {
+                font-size:rem(16);
+                margin:0 40px 0 0;
+            }
+
+        }
+
+    }
+
+    // 레이아웃 설정때문에 상위엘리먼트의 여백을 이리로 옮겨와서 보기 쉽게
+    @include media_query($device_small) {
+        padding-bottom:380px;
+    }
+
+    @include media_query($device_middle) {
+        padding-bottom:470px;
+    }
+
+    @include media_query($device_large) {
+        padding-left:630px;
+        padding-top:230px;
+        padding-bottom:230px;
+    }
+
+    dd {
+        position:absolute;
+        left:0;
+        right:0;
+        height:50px;
+        top:50px;
+        display:none;
+        color:#666;
+        padding:0;
+        margin:0;
+        line-height:1.6;
+
+        @include media_query($device_small) {
+            font-size:rem(12);
+            text-align:center;
+
+            img {
+                width:215px;
+                margin-top:40px;
+                &.nova {
+                    width:120px;
+                    height:auto;
+                    margin-top:20px;
+                }
+            }
+
+        }
+
+        @include media_query($device_middle) {
+            font-size:rem(14);
+            text-align:center;
+
+            img {
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+                width:419px;
+                height:347px;
+
+                margin-top:30px;
+                &.nova {
+                    width:120px;
+                    height:auto;
+                    margin-top:20px;
+                }
+            }
+
+        }
+
+        @include media_query($device_large) {
+            font-size:rem(14);
+            img {
+                width:419px;
+
+                display:block;
+                position:absolute;
+                top:-205px;
+                left:-500px;
+
+                &.nova {
+                    width:250px;
+                    height:auto;
+                    top:-280px;
+                    left:-390px;
+                }
+            }
+        }
+    }
+
+    @include media_query($device_small) {
+        dd figcaption br { display:none; }
+    }
+
+    dt.viewing > button {
+        border-bottom:1px solid #000;
+        font-weight:700;
+    }
+
+    dt.viewing + dd {
+        display:block;
+    }
+}
+
+
+
+// 컨소시엄
+article .consortium {
+    position:relative;
+    box-sizing:border-box;
+
+    @include media_query($device_large) {
+        padding-top:223px;
+        height:551px;
+    }
+
+    h2 {
+        @include screen_reader;
+    }
+
+    h3 {
+        font-weight:300;
+        margin-bottom:16px;
+
+        & + p {
+            font-size:rem(13);
+            color:#666;
+            line-height:1.6;
+
+            br {
+                @include media_query($device_small) {
+                    display:none;
+                }
+            }
+        }
+
+        @include media_query($device_small) {
+            font-size:rem(18);
+        }
+
+        @include media_query($device_middle) {
+            font-size:rem(24);
+        }
+
+        @include media_query($device_large) {
+            font-size:rem(32);
+        }
+    }
+
+    ul {
+        padding-left:0;
+
+        @include media_query($device_small) {
+            margin-top:75px;
+        }
+
+        @include media_query($device_middle) {
+            text-align:center;
+        }
+
+        @include media_query($device_large) {
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            right:0;
+        }
+
+        li {
+            text-align:center;
+
+            list-style-type:none;
+            padding:0;
+
+            @include media_query($device_small) {
+                margin:40px 0 0 0;
+            }
+
+            @include media_query($device_middle) {
+                display:inline-block;
+            }
+
+
+            @include media_query($device_large) {
+                margin:68px 0 0 0;
+            }
+
+            &:first-child {
+                margin-top:0;
+            }
+
+            img {
+                @include media_query($device_small) {
+                    width:188px;
+                }
+
+                @include media_query($device_middle) {
+                    vertical-align:top;
+                    width:188px;
+                    margin:24px 12px 0;
+                }
+
+                @include media_query($device_large) {
+                    width:245px;
+                }
+            }
+        }
+    }
+}
+
+
+// team
+article > .team {
+    position:relative;
+
+    h2 {
+        @include media_query($device_small) {
+            font-size:rem(20);
+            font-weight:300;
+        }
+
+        @include media_query($device_middle) {
+            font-size:rem(24);
+            font-weight:300;
+            br {
+                display:none;
+            }
+        }
+
+        @include media_query($device_large) {
+            font-size:rem(32);
+            font-weight:300;
+
+            br {
+                display:none;
+            }
+        }
+
+        & + p {
+            @include media_query($device_small) {
+                margin-bottom:40px;
+
+                br {
+                    display:none;
+                }
+            }
+
+            @include media_query($device_middle) {
+                margin-bottom:72px;
+            }
+
+            @include media_query($device_large) {
+                margin-bottom:96px;
+            }
+
+
+            font-size:rem(13);
+            color:#666;
+            line-height:1.5;
+            margin-top:16px;
+        }
+    }
+
+    .detail {
+        text-align:center;
+    }
+
+    .description {
+        @include media_query($device_small) {
+            display:block;
+        }
+
+        @include media_query($device_middle) {
+            width:160px;
+        }
+
+        @include media_query($device_large) {
+            width:160px;
+        }
+
+        display:inline-block;
+        vertical-align:top;
+        padding:0 11px 40px;
+
+        p {
+            @include media_query($device_small) {
+                font-size:rem(12);
+                color:#333;
+                line-height:1.6;
+                margin-top:12px;
+                width:160px;
+            }
+
+            @include media_query($device_middle) {
+                font-size:rem(12);
+                color:#333;
+                line-height:1.6;
+                margin-top:12px;
+                width:160px;
+            }
+
+            @include media_query($device_large) {
+            }
+        }
+
+        button.view_more {
+            margin-top:12px;
+        }
+    }
+
+    .detail.team > h3 {
+        @include screen_reader;
+    }
+
+    .detail.advisor > h3 {
+        font-size:rem(20);
+        font-family:$em-font;
+        text-transform:uppercase;
+        letter-spacing:0.5em;
+        color:#000;
+        font-weight:200;
+
+        @include media_query($device_small) {
+            margin:48px 0;
+        }
+
+        @include media_query($device_middle) {
+            margin:48px 0;
+        }
+
+        @include media_query($device_large) {
+            margin:96px 0 56px;
+        }
+
+
+    }
+
+    h4 {
+        text-align:center;
+        color:#0e0e0e;
+        font-weight:400;
+        font-size:rem(13);
+
+        img {
+            display:block;
+            border-radius:100%;
+            margin:0 auto 20px;
+        }
+
+        & ~ p {
+            margin-bottom:56px;
+            display:none;
+        }
+
+        sub {   // 직위, 직함
+            font-size:0.923076em;
+            color:#999;
+            display:block;
+            margin-top:8px;
+        }
+    }
+
+    // 버튼 인터랙션 관련
+    button.un.fold + p {
+        display:block;
+    }
+
+    button.view_more {
+
+        &.for_mobile {
+            @include media_query($device_small) {
+            }
+            @include media_query($device_large) {
+                display:none;
+            }
+        }
+
+        &.for_desktop {
+            @include media_query($device_small) {
+                display:none;
+            }
+            @include media_query($device_large) {
+            }
+        }
+    }
+
+    button.view_detail {
+
+        &.for_mobile {
+            @include media_query($device_small) {
+            }
+            @include media_query($device_large) {
+                display:none;
+            }
+        }
+
+        &.for_desktop {
+            @include media_query($device_small) {
+                display:none;
+            }
+            @include media_query($device_middle) {
+                display:none;
+            }
+            @include media_query($device_large) {
+                position:absolute;
+                top:29px;
+                right:0;
+            }
+        }
+    }
+}
+
+// 비디오그라피
+article > .videography {
+    background-color:#000 !important;
+    color:#fff;
+    text-align:center;
+    height:711px;
+    box-sizing:border-box;
+
+    h2 {
+        @include screen_reader;
+    }
+
+
+    h3 {
+        font-family:$em-font;
+        font-weight:500;
+        font-size:rem(24);
+        text-transform:uppercase;
+
+        & + p {
+            margin-top:16px;
+            font-size:rem(13);
+            font-weight:300;
+            color:#fff;
+            line-height:1.6;
+        }
+    }
+
+    .detail.video {
+        margin-top:56px;
+        display:inline-block;
+        width:688px;
+        height:387px;
+        background-color:#aaa;
+    }
+}
+
+// 메일 수신
+article > .subscribe {
+}
+
+// 뉴스 (ajax), eeg
+article > .news {
+    @include media_query($device_small) {
+        min-height:600px;
+    }
+
+    h2 {
+        font-size:rem(16);
+        font-weight:500;
+
+        @include media_query($device_small) {
+            margin-bottom:16px;
+        }
+
+        @include media_query($device_middle) {
+            margin-bottom:24px;
+        }
+
+        @include media_query($device_large) {
+            margin-bottom:32px;
+        }
+
+        sub {
+            @include media_query($device_small) {
+                display:none;
+            }
+
+            @include media_query($device_middle) {
+                vertical-align:inherit;
+                color:#666;
+                font-weight:300;
+
+                &:before {
+                    content : '- ';
+                }
+            }
+
+            @include media_query($device_large) {
+                vertical-align:inherit;
+                color:#666;
+                font-weight:300;
+
+                &:before {
+                    content : '- ';
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            margin-top:40px;
+        }
+    }
+
+    .detail.news,
+    .detail.eeg {
+
+        min-height:300px;
+
+        & > a {
+            display:block;
+            box-sizing:border-box;
+            transition:all 300ms linear;
+
+            &:hover {
+                box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.2);
+
+                h3 {
+                    text-decoration:underline;
+                }
+            }
+            @include media_query($device_small) {
+
+                &:first-child {
+                    margin-top:0;
+                }
+
+                margin-top:48px;
+            }
+
+            @include media_query($device_middle) {
+                width:calc(100%/3 - 8px);
+                margin-bottom:40px;
+
+                display:inline-block;
+                vertical-align:top;
+                margin-left:12px;
+
+                &:first-child {
+                    margin-left:0;
+                }
+
+                &:nth-of-type(3n+1) {
+                    margin-left:0;
+                }
+            }
+
+            @include media_query($device_large) {
+                width:302px;
+                margin-bottom:40px;
+
+                display:inline-block;
+                vertical-align:top;
+                margin-left:12px;
+
+                &:first-child {
+                    margin-left:0;
+                }
+
+                &:nth-of-type(3n+1) {
+                    margin-left:0;
+                }
+            }
+
+            h3 {
+                box-sizing:border-box;
+                font-size:rem(14);
+                color:#333;
+                font-family:$em-font;
+                font-weight:500;
+                line-height:1.6;
+                padding:0 0.6em;
+                white-space:nowrap;
+                overflow:hidden;
+                text-overflow:ellipsis;
+
+                @include media_query($device_large) {
+                    width:21em;
+                }
+            }
+
+            p {
+                margin-top:12px;
+                padding:0 0.6em 0.6em;
+                font-size:rem(12);
+                line-height:1.6;
+                word-break:break-all;
+                color:#666;
+
+            }
+
+            span {      // image container
+                display:block;
+                height:197px;
+                background-position:center center;
+                background-repeat:no-repeat;
+                background-size:cover;
+                margin-bottom:20px;
+            }
+        }
+    }
+
+}
+
+article > .banner {
+        background-color:#000 !important;
+        color:#fff;
+        box-sizing:border-box;
+
+
+        background-image:url('../image/ci_medium.png');
+        background-repeat:no-repeat;
+
+        @include media_query($device_small) {
+            text-align:center;
+            padding:48px 29px;
+
+            background-position:right bottom;
+            background-size:94px 80px;
+        }
+
+        @include media_query($device_middle) {
+            padding-top:48px;
+            padding-bottom:48px;
+
+            background-position:calc(100% - 50px) bottom;
+            background-size:94px 80px;
+            background-size:16%;
+        }
+
+        @include media_query($device_large) {
+            background-position-x:calc(50% + 376px);
+            background-position-y:center;
+            background-size:144px 113px;
+        }
+
+        h2 {
+            @include media_query($device_small) {
+                font-size:rem(16);
+            }
+
+            @include media_query($device_large) {
+                font-size:rem(32);
+                font-weight:300;
+            }
+        }
+
+        p {
+            font-size:rem(13);
+            padding-top:24px;
+            @include media_query($device_small) {
+                font-weight:300;
+                line-height: 1.6;
+            }
+        }
+
+        .btn_area {
+            margin-top:32px;
+
+            @include media_query($device_small) {
+                font-weight:300;
+                line-height: 1.6;
+            }
+
+            @include media_query ($device_large) {
+                text-align:left;
+            }
+        }
+}

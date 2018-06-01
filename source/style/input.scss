@@ -1,0 +1,30 @@
+input[type='email'],
+input[type='text'] {
+    background:transparent;
+    border-style:solid;
+    border-width:0;
+    box-sizing:border-box;
+    border-color:transparent;
+}
+
+
+input.email {
+    border:1px solid #aaa;
+    border-radius:2px;
+    width:237px;
+    height:40px;
+    line-height:38px;
+
+    font-size:rem(13);
+    color:#fff;
+    font-weight:300;
+
+    transition:border 0.3s ease-in;
+
+    outline:0;
+
+    &:focus {
+        box-shadow:0 0 7px rgba(255,255,255,0.4);
+        border-color:#fff;
+    }
+}

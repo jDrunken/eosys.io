@@ -1,0 +1,148 @@
+// layout
+header,
+article,
+footer {
+
+    // 레이아웃과 배경사진을 분리하기 위함
+    div.container {
+        margin:0 auto;
+        position:relative;
+        box-sizing:border-box;
+
+        @include media_query($min_1280) {
+
+            max-width:calc(1250px - 320px);
+        }
+    }
+}
+
+div.popup {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(0, 0, 0, 0.4);
+    display:none;
+    z-index:99;
+
+    &.viewing {
+        display:block;
+    }
+
+    .wrapper {
+        position:absolute;
+        top:70px;
+        bottom:70px;
+        background:#fff;
+        width:992px;
+        left:50%;
+        transform:translateX(-50%);
+
+        > h2 {
+            text-align:center;
+            letter-spacing:0.4em;
+            font-size:rem(20);
+            margin-top:48px;
+        }
+
+        .scroll_section {
+            position:absolute;
+            min-width:680px;
+            overflow-x:hidden;
+            overflow-y:auto;
+            top:calc(48px * 3);
+            bottom:96px;
+            left:80px;
+            right:80px;
+            padding:0 80px;
+        }
+
+
+        h3 {
+            font-family:$em-font;
+        }
+
+        .detail.advisor > h3 {
+            font-size:rem(20);
+            font-family:$em-font;
+            text-transform:uppercase;
+            letter-spacing:0.5em;
+            color:#000;
+            font-weight:200;
+
+            text-align:center;
+
+            margin:96px 0 56px;
+        }
+
+        .container {
+            h2:first-child {
+                display:none;
+
+                + p {
+                    display:none;
+                }
+
+            }
+
+            .detail.team > h3 {
+                display:none;
+            }
+
+            button.view_detail,
+            button.view_more {
+                display:none;
+            }
+
+            .description {
+                position:relative;
+                padding-left:192px;
+                margin-top:67px;
+                min-height:160px;
+
+                &:nth-of-type(1) {
+                    margin-top:0;
+                }
+
+                h4 img {
+                    position:absolute;
+                    left:0;
+                    top:50%;
+                    transform:translateY(-50%);
+                }
+
+                h4 {
+                    font-size:rem(14);
+                }
+
+                sub {
+                    margin-top:4px;
+                    font-size:rem(13);
+                    display:block;
+                    color:#666;
+                }
+
+                p {
+                    font-size:rem(13);
+                    border-top:1px solid #e2e2e2;
+                    margin-top:15px;
+                    padding-top:15px;
+                    line-height:1.6;
+                }
+            }
+        }
+    }
+
+    button.close.button {
+        position:absolute;
+        top:40px;
+        right:40px;
+        background:url('../image/icon_close_black_transparent_24_24.png') center center no-repeat transparent;
+        background-size:20px 20px;
+        display:block;
+
+        width:20px;
+        height:20px;
+    }
+}

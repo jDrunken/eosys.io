@@ -1,0 +1,130 @@
+@charset 'UTF-8';
+
+footer {
+    box-sizing:border-box;
+    background-color:#333;
+    color:#fff;
+    position:relative;
+
+    @include media_query($device_small) {
+        padding:48px 20px;
+    }
+
+    @include media_query($device_middle) {
+        padding:48px 20px;
+    }
+
+    @include media_query($device_large) {
+        padding:96px 144px;
+    }
+
+    a {
+        color:#fff;
+    }
+
+    h2 {
+        @include screen_reader;
+    }
+
+    h3 {
+        line-height:1.25;
+        color:#fff;
+        font-weight:200;
+
+        @include media_query($device_small) {
+            font-size:rem(20);
+            margin-bottom:20px;
+            text-align:center;
+        }
+
+        @include media_query($device_middle) {
+            font-size:rem(20);
+            margin-bottom:20px;
+        }
+
+        @include media_query($device_large) {
+            font-size:rem(32);
+        }
+
+    }
+
+    p.copyright {
+        font-weight:100;
+        color:#bbb;
+
+        @include media_query($device_small) {
+            font-size:rem(12);
+            margin-top:32px;
+            text-align:center;
+        }
+
+        @include media_query($device_middle) {
+            font-size:rem(13);
+            text-align:center;
+            margin-top:24px;
+        }
+
+        @include media_query($device_large) {
+            font-size:rem(14);
+            margin-top:16px;
+        }
+
+
+    }
+
+    form {
+        @include media_query($device_small) {
+        }
+
+        @include media_query($device_middle) {
+            position:absolute;
+            top:4px;
+            right:0;
+        }
+        @include media_query($device_large) {
+            position:absolute;
+            top:50%;
+            right:0;
+            transform:translateY(-50%);
+        }
+
+    }
+
+    input {
+        vertical-align:top;
+
+        &::placeholder {
+            color:#aaa;
+        }
+
+    }
+
+    input[type="email"] {
+        background:url('../image/icon_mail_white_transparent_14_11.png') 15px center no-repeat transparent;
+        background-size:14px 11px;
+        padding-left:40px;
+
+        @include media_query($device_small) {
+            width:100%;
+        }
+    }
+
+    input[type="submit"] {
+        transition:transform 200ms ease-in-out;
+
+        &:hover {
+            transform:scale(1.05);
+        }
+
+        @include media_query($device_small) {
+            display:block;
+            margin:10px auto 0;
+            width:100%;
+        }
+
+        @include media_query($device_large) {
+            margin-left:0.3em;
+        }
+
+    }
+}
