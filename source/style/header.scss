@@ -385,3 +385,10 @@ header.invert a[href="#subscribe"][aria-hidden] {
 header > a[href="#subscribe"] {
     display:none;
 }
+
+@include media_query($device_small) {
+    // 디바이스가 작을때는 안보여야됨
+    header nav .main.link a[href="#subscribe"] {
+        display:none;
+    }
+}
