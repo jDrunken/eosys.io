@@ -12,8 +12,8 @@
         blockproducer : {
             rss_url: 'https://medium.com/feed/eosys' + '/tagged/' + 'blockproducer'
         },
-        other : {
-            rss_url: 'https://medium.com/feed/eosys' + '/tagged/' + locale
+        clipping : {
+            rss_url: 'https://medium.com/feed/eosys' + '/tagged/' + 'newsclipping'
         },
         eeg : {
             rss_url: 'https://medium.com/feed/eosys' + '/tagged/' + 'eeg'
@@ -22,14 +22,14 @@
 
     var content = {
                 blockproducer : []  // 상단에 blockproducer가 담길거
-            ,   other : []
+            ,   clipping : []
             ,   eeg : []
         }
     ;
 
 
     // 데이터 세팅을 해야겠구나.. 쿼리를 네번 던져야되나..?
-    var makeData = function (_array,item,i) {
+    var makeData = function (_array,item) {
         _array.push({
             title : item.title,
             thumbnail : item.thumbnail,
@@ -51,7 +51,7 @@
                     if (content.blockproducer.length === 3) {
                         return false;
                     }
-                    makeData(content.blockproducer,item,'qda');
+                    makeData(content.blockproducer,item);
 
                 } else if (lang ==='en' && /eosys/gi.test(isConditionBlob)) {
                     if (content.blockproducer.length === 3) {
@@ -83,42 +83,47 @@
         });
     });
 
-    // 그외 언어에 맞는 글 가지고 오기
-    $.get('https://api.rss2json.com/v1/api.json', url.other, function(response) {
+    // // 뉴스 클리핑 3개 가지고 오기
+    // $.get('https://api.rss2json.com/v1/api.json', url.clipping, function(response) {
 
-        if (response.status == 'ok') {
-            $.each(response.items, function(i, item) {
-                var isConditionBlob = item.categories.join()
-                // if (!/blockproducer/.test(isConditionBlob)) {
-                if (/newsclipping/gi.test(isConditionBlob) || /ecosystem/gi.test(isConditionBlob)) {
-                    makeData(content.other,item);
+    //     if (response.status == 'ok') {
+    //         $.each(response.items, function(i, item) {
+    //             var isConditionBlob = item.categories.join()
+    //             if (lang ==='ko' && !!/이오시스/gi.test(isConditionBlob)) {
+    //                 if (content.clipping.length === 3) {
+    //                     return false;
+    //                 }
+    //                 makeData(content.clipping,item);
 
-                    if (content.other.length === 3) {
-                        return false;
-                    }
-                }
-            });
-        }
+    //             } else if (lang ==='en' && /eosys/gi.test(isConditionBlob)) {
+    //                 if (content.clipping.length === 3) {
+    //                     return false;
+    //                 }
+    //                 makeData(content.clipping,item);
 
-        $(function() {
-            var $other = $('#other');
+    //             }
+    //         });
+    //     }
 
-            var dom = ''
+    //     $(function() {
+    //         var $clipping = $('#clipping');
 
-            if (!content.other) {
-                return;
-            } else {
-                for (var i=0; i < content.other.length; i++) {
-                    dom += '<a href="' + content.other[i].link + '" >';
-                    dom += '<span style="background-image:url(' + content.other[i].thumbnail + ');"></span>';
-                    dom += '<h3>' + content.other[i].title + '</h3>';
-                    dom += '<p>' + content.other[i].desc + '</p>';
-                    dom += '</a>';
-                }
-            }
-            $other.html(dom);
-        });
-    });
+    //         var dom = ''
+
+    //         if (!content.clipping) {
+    //             return;
+    //         } else {
+    //             for (var i=0; i < content.clipping.length; i++) {
+    //                 dom += '<a href="' + content.clipping[i].link + '" >';
+    //                 dom += '<span style="background-image:url(' + content.clipping[i].thumbnail + ');"></span>';
+    //                 dom += '<h3>' + content.clipping[i].title + '</h3>';
+    //                 dom += '<p>' + content.clipping[i].desc + '</p>';
+    //                 dom += '</a>';
+    //             }
+    //         }
+    //         $clipping.html(dom);
+    //     });
+    // });
 
     // eeg 컨텐트 가지고 오기
     $.get('https://api.rss2json.com/v1/api.json', url.eeg, function(response) {
