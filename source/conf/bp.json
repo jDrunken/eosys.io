@@ -1,0 +1,82 @@
+{
+  "producer_account_name": "eosyskoreabp",
+  "producer_public_key": "EOS7TjKVBkBcSmjsXF4jJfZ1QU9RqVHuBkkcHNJoEcHGR79CoLf2f",
+  "org": {
+    "candidate_name": "EOSYS",
+    "website": "http://eosys.io/",
+    "code_of_conduct": "https://steemit.com/eos/@eosys/eosys-2",
+    "email": "eosys@eosys.io",
+    "branding": {
+      "logo_256":"",
+      "logo_1024":"https://bit.ly/2kHPC0z",
+      "logo_svg":""
+    },
+    "location": {
+      "name": "WeWork",
+      "country": "South Korea",
+      "latitude": 37.4992135,
+      "longitude": 127.0359171
+    },
+    "social": {
+      "steemit": "https://steemit.com/@eosys/",
+      "twitter": "https://twitter.com/EOSYS_IO",
+      "youtube": "https://m.youtube.com/channel/UCfqueDutLB7th60V6ZZX9Ww",
+      "facebook": "",
+      "github":"",
+      "reddit": "",
+      "keybase": "",
+      "telegram": "https://t.me/EOSYSIO",
+      "wechat": "charlespyo"
+    }
+  },
+  "nodes": [
+    {
+      "location": {
+        "name": "EOSYS Producer Node",
+        "country": "Japan",
+        "latitude": 35.681936,
+        "longitude": 139.724209
+      },
+      "is_producer": true,
+      "p2p_endpoint": "",
+      "api_endpoint": "",
+      "ssl_endpoint": ""
+    },
+    {
+      "location": {
+        "name": "EOSYS Backup Node",
+        "country": "Japan",
+        "latitude": 35.681936,
+        "longitude": 139.724209
+      },
+      "is_producer": false,
+      "p2p_endpoint": "",
+      "api_endpoint": "",
+      "ssl_endpoint": ""
+    },
+    {
+      "location": {
+        "name": "EOSYS Full Node 1",
+        "country": "Japan",
+        "latitude": 35.681936,
+        "longitude": 139.724209
+      },
+      "is_producer": false,
+      "p2p_endpoint": "",
+      "api_endpoint": "",
+      "ssl_endpoint": ""
+    },
+    {
+      "location": {
+        "name": "EOSYS Full Node 2",
+        "country": "Japan",
+        "latitude": 35.681936,
+        "longitude": 139.724209
+      },
+      "is_producer": false,
+      "p2p_endpoint": "",
+      "api_endpoint": "",
+      "ssl_endpoint": ""
+    }
+  ]
+}
