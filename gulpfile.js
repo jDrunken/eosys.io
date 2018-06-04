@@ -27,19 +27,22 @@ var gulp              = require('gulp')
 	sourcemaps        = require('gulp-sourcemaps'),
 
     // simple html template
-    extender          = require('gulp-html-extend')
+    extender          = require('gulp-html-extend'),
 
     // comment remove
-    removeHtmlComment = require('gulp-remove-html-comments')
+    removeHtmlComment = require('gulp-remove-html-comments'),
 
     // get node_modules to build
-    npmDist           = require('gulp-npm-dist')
+    npmDist           = require('gulp-npm-dist'),
 
     // change path name
-    rename            = require('gulp-rename')
+    rename            = require('gulp-rename'),
 
     // gulp-gh-pages
-    publish           = require('gulp-gh-pages')
+    publish           = require('gulp-gh-pages'),
+
+    // css :: inline image
+    base64            = require('gulp-base64')
 ;
 
 
@@ -158,10 +161,9 @@ gulp.task('convert:sass', function () {
             expand: true,
             flatten: false
         }))
-        // 당분간 홀딩하겠음. 이미지를 어떻게 처리할지 모르니까..
-        // .pipe(base64({
-        //     maxImageSize: 5*1024                                  // bytes,
-        // }))         
+        .pipe(base64({
+            maxImageSize: 5*1024 // bytes
+        }))
         .pipe(gulp.dest(path.deploy + '/css'))
         .pipe(livereload());
 });
