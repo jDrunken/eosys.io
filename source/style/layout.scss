@@ -9,7 +9,7 @@ footer {
         position:relative;
         box-sizing:border-box;
 
-        @include media_query($min_1280) {
+        @include media_query($device_large) {
 
             max-width:calc(1250px - 320px);
         }
