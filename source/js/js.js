@@ -8,159 +8,116 @@
         return _lang === 'ko' ? '이오시스' : 'eosys'
     })(lang);
 
-    var url = {
-        blockproducer : {
-            rss_url: 'https://medium.com/feed/eosys' + '/tagged/' + 'blockproducer'
+    // 데이터 세팅을 해야겠구나
+    var post = {
+        // static set
+        url : {
+            blockProducer : {
+                rss_url: 'https://medium.com/feed/eosys/tagged/' + 'blockproducer'
+            },
+            newsClipping : {
+                rss_url: 'https://medium.com/feed/eosys/tagged/' + 'newsclipping'
+            },
+            ecoSystem : {
+                rss_url: 'https://medium.com/feed/eosys/tagged/' + 'ecosystem'
+            },
+            eeg : {
+                rss_url: 'https://medium.com/feed/eosys/tagged/' + 'eeg'
+            }
         },
-        other : {
-            rss_url: 'https://medium.com/feed/eosys' + '/tagged/' + locale
-        },
-        eeg : {
-            rss_url: 'https://medium.com/feed/eosys' + '/tagged/' + 'eeg'
+        api : 'https://api.rss2json.com/v1/api.json',
+
+        content : {
+            blockProducer :[],
+            mix : [],            // 에코시스템과 뉴스클리핑을 섞어서 보여줌
+            eeg :[],
+            newsclipping : [],
+            ecoSystem : [],
         }
-    };
-
-    var content = {
-                blockproducer : []  // 상단에 blockproducer가 담길거
-            ,   other : []
-            ,   eeg : []
-        }
-    ;
-
-
-    // 데이터 세팅을 해야겠구나.. 쿼리를 네번 던져야되나..?
-    var makeData = function (_array,item,i) {
-        _array.push({
-            title : item.title,
-            thumbnail : item.thumbnail,
-            link : item.link,
-            desc : item.description.replace(/<.+?>/gim,'').replace(/\t\n\r/gi,'').replace(/\s$/gi,'').substring(0,120) + '…'
-        });
-
-        return 'data pushed';
     }
 
-    // 블록프로듀서 글 3개 가지고 와서 바인딩
-    $.get('https://api.rss2json.com/v1/api.json', url.blockproducer, function(response) {
-        if (response.status == 'ok') {
+    post.makeData = function (name,_array,target,filter) {
+        $.each(_array, function (i, item) {
 
-            $.each(response.items, function(i, item) {
-                var isConditionBlob = item.categories.join()
-                // 이 중 블록프로듀서에는 blockproducer 태그를 가지고 온다.
-                if (lang ==='ko' && !!/이오시스/gi.test(isConditionBlob)) {
-                    if (content.blockproducer.length === 3) {
-                        return false;
-                    }
-                    makeData(content.blockproducer,item,'qda');
+            var isConditionBlob = item.categories.join()
+            var regex = new RegExp(locale);
 
-                } else if (lang ==='en' && /eosys/gi.test(isConditionBlob)) {
-                    if (content.blockproducer.length === 3) {
-                        return false;
-                    }
-                    makeData(content.blockproducer,item);
+            // console.log(name,item.title,isConditionBlob);
 
-                }
-            });
-        }
+            if (regex.test(isConditionBlob)) {
+                target.push({
+                    title : item.title,
+                    thumbnail : item.thumbnail,
+                    link : item.link,
+                    desc : item.description.replace(/<.+?>/gim,'').replace(/\t\n\r/gi,'').replace(/\s$/gi,'').substring(0,120) + '…'
+                });
 
-        $(function() {
-            var $blockproducer = $('#blockproducer');
-
-            var dom = ''
-
-            if (!content.blockproducer) {
-                return;
-            } else {
-                for (var i=0; i < content.blockproducer.length; i++) {
-                    dom += '<a href="' + content.blockproducer[i].link + '" >';
-                    dom += '<span style="background-image:url(' + content.blockproducer[i].thumbnail + ');"></span>';
-                    dom += '<h3>' + content.blockproducer[i].title + '</h3>';
-                    dom += '<p>' + content.blockproducer[i].desc + '</p>';
-                    dom += '</a>';
+                if (target.length === 3) {
+                    return false;           // jQuery.each를 중단함.
                 }
             }
-            $blockproducer.html(dom);
         });
-    });
 
-    // 그외 언어에 맞는 글 가지고 오기
-    // $.get('https://api.rss2json.com/v1/api.json', url.other, function(response) {
+        return target;
+    };
 
-    //     if (response.status == 'ok') {
-    //         $.each(response.items, function(i, item) {
-    //             var isConditionBlob = item.categories.join()
-    //             // if (!/blockproducer/.test(isConditionBlob)) {
-    //             if (/newsclipping/gi.test(isConditionBlob) || /ecosystem/gi.test(isConditionBlob)) {
-    //                 makeData(content.other,item);
+    post.binding = function (_array) {
+        var item = _array;
+        var max = _array.length;
+        var dom = '';
 
-    //                 if (content.other.length === 3) {
-    //                     return false;
-    //                 }
-    //             }
-    //         });
-    //     }
-
-    //     $(function() {
-    //         var $other = $('#other');
-
-    //         var dom = ''
-
-    //         if (!content.other) {
-    //             return;
-    //         } else {
-    //             for (var i=0; i < content.other.length; i++) {
-    //                 dom += '<a href="' + content.other[i].link + '" >';
-    //                 dom += '<span style="background-image:url(' + content.other[i].thumbnail + ');"></span>';
-    //                 dom += '<h3>' + content.other[i].title + '</h3>';
-    //                 dom += '<p>' + content.other[i].desc + '</p>';
-    //                 dom += '</a>';
-    //             }
-    //         }
-    //         $other.html(dom);
-    //     });
-    // });
-
-    // eeg 컨텐트 가지고 오기
-    $.get('https://api.rss2json.com/v1/api.json', url.eeg, function(response) {
-        if (response.status == 'ok') {
-
-            $.each(response.items, function(i, item) {
-                var isConditionBlob = item.categories.join()
-                // 이 중 블록프로듀서에는 blockproducer 태그를 가지고 온다.
-                if (lang ==='ko' && !!/이오시스/gi.test(isConditionBlob)) {
-                    if (content.eeg.length === 3) {
-                        return false;
-                    }
-                    makeData(content.eeg,item,'qda');
-
-                } else if (lang ==='en' && /eosys/gi.test(isConditionBlob)) {
-                    if (content.eeg.length === 3) {
-                        return false;
-                    }
-                    makeData(content.eeg,item);
-
-                }
-            });
+        for (var i=0; i<max; i++) {
+            dom += '<a href="' + item[i].link + '" >';
+            dom += '<span style="background-image:url(' + item[i].thumbnail + ');"></span>';
+            dom += '<h3>' + item[i].title + '</h3>';
+            dom += '<p>' + item[i].desc + '</p>';
+            dom += '</a>';
         }
 
-        $(function() {
-            var eeg = $('#eeg');
+        return dom;
+    };
 
-            var dom = ''
+    post.get = {
+        blockProducer: $.get(post.api, post.url.blockProducer),
+        newsClipping:  $.get(post.api, post.url.newsClipping),
+        ecoSystem:     $.get(post.api, post.url.ecoSystem),
+        eeg:           $.get(post.api, post.url.eeg)
+    };
 
-            if (!content.blockproducer) {
-                return;
-            } else {
-                for (var i=0; i < content.eeg.length; i++) {
-                    dom += '<a href="' + content.eeg[i].link + '" >';
-                    dom += '<span style="background-image:url(' + content.eeg[i].thumbnail + ');"></span>';
-                    dom += '<h3>' + content.eeg[i].title + '</h3>';
-                    dom += '<p>' + content.eeg[i].desc + '</p>';
-                    dom += '</a>';
-                }
-            }
-            eeg.html(dom);
+    // get data > Processing > bind dom
+    $.when(
+        post.get.blockProducer,
+        post.get.newsClipping,
+        post.get.ecoSystem,
+        post.get.eeg
+    ).then(function (blockProducer, newsClipping, ecoSystem, eeg) {
+        post.makeData('blockproducer', blockProducer[0].items, post.content.blockProducer, locale);
+        post.makeData('eeg', eeg[0].items, post.content.eeg, locale);
+
+        // 뉴스클리핑과 에코시스템을 섞어서 하나의 데이터로 만들어 가공함
+        var mix = newsClipping[0].items.concat(ecoSystem[0].items);
+        console.log(mix);
+
+        mix.sort(function(a,b){
+            var aTime = parseInt(a.pubDate.replace( /[-\s:]/gi,''))
+            ,   bTime = parseInt(b.pubDate.replace( /[-\s:]/gi,''))
+            ;
+
+            return bTime-aTime;
         });
+
+        post.makeData('mix', mix, post.content.mix, locale);
+
+    }).done(function (){
+        var blockProducer = post.binding(post.content.blockProducer)
+        ,   mix = post.binding(post.content.mix)
+        ,   eeg = post.binding(post.content.eeg)
+        ;
+
+        // 두개의
+        $('#newsMix').html(blockProducer).append(mix);
+        // $('#mix').html(mix);
+        $('#eeg').html(eeg);
     });
 
 })(jQuery);
@@ -217,7 +174,6 @@
             $(this).addClass('viewing');
             smoothScrollTo(this.hash, e);
         });
-
 
         smoothScrollTo(location.hash);
 
