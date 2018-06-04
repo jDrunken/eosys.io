@@ -96,7 +96,6 @@
 
         // 뉴스클리핑과 에코시스템을 섞어서 하나의 데이터로 만들어 가공함
         var mix = newsClipping[0].items.concat(ecoSystem[0].items);
-        console.log(mix);
 
         mix.sort(function(a,b){
             var aTime = parseInt(a.pubDate.replace( /[-\s:]/gi,''))
