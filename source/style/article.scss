@@ -309,6 +309,7 @@ article .project {
                 font-size:rem(32);
                 font-family:$em-font;
                 font-weight:300;
+                letter-spacing:-2px;
             }
         }
     }
@@ -368,7 +369,6 @@ article .project {
             }
 
         }
-
     }
 
     // 레이아웃 설정때문에 상위엘리먼트의 여백을 이리로 옮겨와서 보기 쉽게
@@ -381,9 +381,12 @@ article .project {
     }
 
     @include media_query($device_large) {
-        padding-left:630px;
         padding-top:230px;
         padding-bottom:230px;
+
+        .container {
+            padding-left:500px;
+        }
     }
 
     dd {

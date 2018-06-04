@@ -52,10 +52,11 @@ div.popup {
             overflow-x:hidden;
             overflow-y:auto;
             top:calc(48px * 3);
-            bottom:96px;
-            left:80px;
-            right:80px;
+            bottom:0;
+            left:0;
+            right:0;
             padding:0 80px;
+            padding-bottom:calc(48px * 3);
         }
 
 
