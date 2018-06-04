@@ -27,9 +27,8 @@ article section {
 
 article section {
     &.project,
-    &.news,
-    &.consortium {
-    background-color:#f8fafc;
+    &.news{
+        background-color:#f8fafc;
     }
 }
 
