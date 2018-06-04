@@ -43,8 +43,8 @@ article .summary {
 
     @include media_query($device_small) {
         font-size:rem(16);
-        padding-top:150px;
-        padding-bottom:150px;
+        padding-top:100px;
+        padding-bottom:100px;
         background-size:cover;
     }
 
