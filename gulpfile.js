@@ -51,13 +51,13 @@ var gulp              = require('gulp')
 // 환경설정
 var path = {
     source : {
-        root     : './source',
-        style    : './source/style',
-        js       : './source/js',
-        template : './source',
-        image    : './source/image',
-        conf     : './source/conf',
-        html     : './source/html'
+        root     : 'source',
+        style    : 'source/style',
+        js       : 'source/js',
+        template : 'source',
+        image    : 'source/image',
+        conf     : 'source/conf',
+        html     : 'source/html'
     },
     deploy : './deploy'
 };
