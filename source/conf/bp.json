@@ -12,8 +12,8 @@
       "logo_svg":"http://eosys.io/logo_eosys.svg"
     },
     "location": {
-      "name": "WeWork",
-      "country": "South Korea",
+      "name": "Seoul",
+      "country": "KR",
       "latitude": 37.4992135,
       "longitude": 127.0359171
     },
@@ -32,8 +32,8 @@
   "nodes": [
     {
       "location": {
-        "name": "EOSYS Producer Node",
-        "country": "Japan",
+        "name": "Tokyo",
+        "country": "JP",
         "latitude": 35.681936,
         "longitude": 139.724209
       },
@@ -44,20 +44,8 @@
     },
     {
       "location": {
-        "name": "EOSYS Backup Node",
-        "country": "Japan",
-        "latitude": 35.681936,
-        "longitude": 139.724209
-      },
-      "is_producer": false,
-      "p2p_endpoint": "",
-      "api_endpoint": "",
-      "ssl_endpoint": ""
-    },
-    {
-      "location": {
-        "name": "EOSYS Full Node 1",
-        "country": "Japan",
+        "name": "Tokyo",
+        "country": "JP",
         "latitude": 35.681936,
         "longitude": 139.724209
       },
@@ -68,8 +56,8 @@
     },
     {
       "location": {
-        "name": "EOSYS Full Node 2",
-        "country": "Japan",
+        "name": "Tokyo",
+        "country": "JP",
         "latitude": 35.681936,
         "longitude": 139.724209
       },
@@ -80,8 +68,8 @@
     },
     {
       "location": {
-        "name": "EOSYS RPC NODE",
-        "country": "Japan",
+        "name": "Tokyo",
+        "country": "JP",
         "latitude": 35.681936,
         "longitude": 139.724209
       },
