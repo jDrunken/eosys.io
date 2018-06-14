@@ -7,9 +7,9 @@
     "code_of_conduct": "https://steemit.com/eos/@eosys/eosys-2",
     "email": "eosys@eosys.io",
     "branding": {
-      "logo_256":"",
+      "logo_256":"http://eosys.io/logo_eosys.png",
       "logo_1024":"https://bit.ly/2kHPC0z",
-      "logo_svg":""
+      "logo_svg":"http://eosys.io/logo_eosys.svg"
     },
     "location": {
       "name": "WeWork",
