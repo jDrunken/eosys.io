@@ -18,14 +18,14 @@
       "longitude": 127.0359171
     },
     "social": {
-      "steemit": "https://steemit.com/@eosys/",
-      "twitter": "https://twitter.com/EOSYS_IO",
-      "youtube": "https://m.youtube.com/channel/UCfqueDutLB7th60V6ZZX9Ww",
+      "steemit": "eosys",
+      "twitter": "EOSYS_IO",
+      "youtube": "UCfqueDutLB7th60V6ZZX9Ww",
       "facebook": "",
-      "github":"https://github.com/EOSYS-io",
+      "github":"EOSYS-io",
       "reddit": "",
       "keybase": "",
-      "telegram": "https://t.me/EOSYSIO",
+      "telegram": "EOSYSIO",
       "wechat": "charlespyo"
     }
   },
