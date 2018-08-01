@@ -4,7 +4,8 @@
   "org": {
     "candidate_name": "EOSYS",
     "website": "http://eosys.io/",
-    "code_of_conduct": "https://steemit.com/eos/@eosys/eosys-2",
+    "code_of_conduct": "https://medium.com/eosys/eosys-ownership-disclosure-code-of-conduct-4214e2550e67",
+    "ownership_disclosure": "https://medium.com/eosys/eosys-ownership-disclosure-code-of-conduct-4214e2550e67",
     "email": "eosys@eosys.io",
     "branding": {
       "logo_256":"http://eosys.io/logo_eosys_256.png",
@@ -31,16 +32,16 @@
   },
   "nodes": [
     {
-      "location": {
-        "name": "Tokyo",
-        "country": "JP",
-        "latitude": 35.681936,
-        "longitude": 139.724209
-      },
-      "is_producer": true,
-      "p2p_endpoint": "",
-      "api_endpoint": "",
-      "ssl_endpoint": ""
+        "location": {
+          "name": "Tokyo",
+          "country": "JP",
+          "latitude": 35.681936,
+          "longitude": 139.724209
+        },
+        "is_producer": false,
+        "p2p_endpoint": "",
+        "api_endpoint": "",
+        "ssl_endpoint": "https://rpc.eosys.io:443"
     },
     {
       "location": {
@@ -67,16 +68,16 @@
       "ssl_endpoint": ""
     },
     {
-      "location": {
-        "name": "Tokyo",
-        "country": "JP",
-        "latitude": 35.681936,
-        "longitude": 139.724209
-      },
-      "is_producer": false,
-      "p2p_endpoint": "",
-      "api_endpoint": "",
-      "ssl_endpoint": "https://rpc.eosys.io:443"
-    }
+        "location": {
+          "name": "Tokyo",
+          "country": "JP",
+          "latitude": 35.681936,
+          "longitude": 139.724209
+        },
+        "is_producer": true,
+        "p2p_endpoint": "",
+        "api_endpoint": "",
+        "ssl_endpoint": ""
+      }
   ]
 }

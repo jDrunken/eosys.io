@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://eosys.io/">
+    <url>
+        <loc>https://www.eosys.io/</loc>
+        <lastmod>2018-07-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.2</priority>
+    </url>
+    <url>
+        <loc>https://www.eosys.io/index-en.html</loc>
+        <lastmod>2018-07-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.2</priority>
+    </url>
+    <url>
+        <loc>https://www.eosys.io/index-ko.html</loc>
+        <lastmod>2018-07-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.2</priority>
+    </url>
+</urlset> 

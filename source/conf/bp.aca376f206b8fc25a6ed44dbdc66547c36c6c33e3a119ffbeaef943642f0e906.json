@@ -4,7 +4,8 @@
   "org": {
     "candidate_name": "EOSYS",
     "website": "http://eosys.io/",
-    "code_of_conduct": "https://steemit.com/eos/@eosys/eosys-2",
+    "code_of_conduct": "https://medium.com/eosys/eosys-ownership-disclosure-code-of-conduct-4214e2550e67",
+    "ownership_disclosure": "https://medium.com/eosys/eosys-ownership-disclosure-code-of-conduct-4214e2550e67",
     "email": "eosys@eosys.io",
     "branding": {
       "logo_256":"http://eosys.io/logo_eosys_256.png",
