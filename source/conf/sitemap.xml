@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://eosys.io/">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.eosys.io/</loc>
+        <loc>https://eosys.io/</loc>
         <lastmod>2018-07-26</lastmod>
         <changefreq>always</changefreq>
         <priority>0.2</priority>
     </url>
     <url>
-        <loc>https://www.eosys.io/index-en.html</loc>
+        <loc>https://eosys.io/index-en.html</loc>
         <lastmod>2018-07-26</lastmod>
         <changefreq>always</changefreq>
         <priority>0.2</priority>
     </url>
     <url>
-        <loc>https://www.eosys.io/index-ko.html</loc>
+        <loc>https://eosys.io/index-ko.html</loc>
         <lastmod>2018-07-26</lastmod>
         <changefreq>always</changefreq>
         <priority>0.2</priority>
