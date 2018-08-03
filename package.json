@@ -17,7 +17,7 @@
     "gulp-imagemin": "^4.1.0",
     "gulp-livereload": "^3.8.1",
     "gulp-main-node-files": "^1.1.1",
-    "gulp-npm-dist": "^1.0.1",
+    "gulp-npm-dist": "^1.0.2",
     "gulp-remove-html-comments": "^1.0.1",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
