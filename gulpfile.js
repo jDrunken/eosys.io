@@ -39,7 +39,7 @@ var gulp              = require('gulp')
     rename            = require('gulp-rename'),
 
     // gulp-gh-pages
-    publish           = require('gulp-gh-pages'),
+    publish           = require('gulp-gh-pages-will'),
 
     // css :: inline image
     base64            = require('gulp-base64')
