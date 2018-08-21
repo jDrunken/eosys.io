@@ -76,8 +76,8 @@
       },
       "is_producer": false,
       "p2p_endpoint": "",
-      "api_endpoint": "",
-      "ssl_endpoint": "https://rpc.eosys.io:443"
+      "api_endpoint": "https://rpc.eosys.io",
+      "ssl_endpoint": "https://rpc.eosys.io"
     }
   ]
 }
