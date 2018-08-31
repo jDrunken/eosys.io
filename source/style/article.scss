@@ -819,7 +819,7 @@ article > .videography {
 article > .subscribe {
 }
 
-// 뉴스 (ajax), eeg
+// 뉴스 (ajax), dapp
 article > .news {
     @include media_query($device_small) {
         min-height:600px;
@@ -873,7 +873,7 @@ article > .news {
     }
 
     .detail.news,
-    .detail.eeg {
+    .detail.dapp {
 
         min-height:300px;
 

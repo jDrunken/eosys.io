@@ -21,8 +21,8 @@
             ecoSystem : {
                 rss_url: 'https://medium.com/feed/eosys/tagged/' + 'ecosystem'
             },
-            eeg : {
-                rss_url: 'https://medium.com/feed/eosys/tagged/' + 'eeg'
+            dapp : {
+                rss_url: 'https://medium.com/feed/eosys/tagged/' + 'Dapp'
             }
         },
         api : 'https://api.rss2json.com/v1/api.json',
@@ -30,7 +30,7 @@
         content : {
             blockProducer :[],
             mix : [],            // 에코시스템과 뉴스클리핑을 섞어서 보여줌
-            eeg :[],
+            dapp :[],
             newsclipping : [],
             ecoSystem : [],
         }
@@ -81,7 +81,7 @@
         blockProducer: $.get(post.api, post.url.blockProducer),
         newsClipping:  $.get(post.api, post.url.newsClipping),
         ecoSystem:     $.get(post.api, post.url.ecoSystem),
-        eeg:           $.get(post.api, post.url.eeg)
+        dapp:           $.get(post.api, post.url.dapp)
     };
 
     // get data > Processing > bind dom
@@ -89,10 +89,10 @@
         post.get.blockProducer,
         post.get.newsClipping,
         post.get.ecoSystem,
-        post.get.eeg
-    ).then(function (blockProducer, newsClipping, ecoSystem, eeg) {
+        post.get.dapp
+    ).then(function (blockProducer, newsClipping, ecoSystem, dapp) {
         post.makeData('blockproducer', blockProducer[0].items, post.content.blockProducer, locale);
-        post.makeData('eeg', eeg[0].items, post.content.eeg, locale);
+        post.makeData('dapp', dapp[0].items, post.content.dapp, locale);
 
         // 뉴스클리핑과 에코시스템을 섞어서 하나의 데이터로 만들어 가공함
         var mix = newsClipping[0].items.concat(ecoSystem[0].items);
@@ -110,13 +110,13 @@
     }).done(function (){
         var blockProducer = post.binding(post.content.blockProducer)
         ,   mix = post.binding(post.content.mix)
-        ,   eeg = post.binding(post.content.eeg)
+        ,   dapp = post.binding(post.content.dapp)
         ;
 
         // 두개의
         $('#newsMix').html(blockProducer).append(mix);
         // $('#mix').html(mix);
-        $('#eeg').html(eeg);
+        $('#dapp').html(dapp);
     });
 
 })(jQuery);
