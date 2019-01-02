@@ -649,7 +649,7 @@ article > .team {
 
         display:inline-block;
         vertical-align:top;
-        padding:0 11px 40px;
+        padding:0 15px 40px;
 
         p {
             @include media_query($device_small) {
