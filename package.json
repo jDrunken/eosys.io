@@ -4,7 +4,8 @@
   "description": "eosys site builder",
   "main": "gulpfile.js",
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "natives": "^1.1.6"
   },
   "devDependencies": {
     "del": "^3.0.0",
