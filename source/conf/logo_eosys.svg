@@ -3,23 +3,33 @@
 <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:url(#SVGID_1_);}
-	.st1{fill:#FFFFFF;}
+	.st0{clip-path:url(#SVGID_2_);fill:url(#SVGID_3_);}
+	.st1{clip-path:url(#SVGID_2_);}
+	.st2{fill:#FFFFFF;}
 </style>
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="6.707" y1="3.3524" x2="1006.3563" y2="1009.6383">
-	<stop  offset="0" style="stop-color:#FF444D"/>
-	<stop  offset="0.1675" style="stop-color:#FF3459"/>
-	<stop  offset="0.4337" style="stop-color:#FF2168"/>
-	<stop  offset="0.7079" style="stop-color:#FF1670"/>
-	<stop  offset="1" style="stop-color:#FF1273"/>
-</linearGradient>
-<rect x="0" class="st0" width="1024" height="1024"/>
 <g>
-	<polygon class="st1" points="644.3,404.9 513.9,179 416.8,278.6 402.5,328.5 512.1,328.5 	"/>
-	<polygon class="st1" points="670.9,573 801.3,347.1 666.5,312.8 616.1,325.4 670.9,420.3 	"/>
-	<polygon class="st1" points="725.7,508.9 670.8,603.8 538.6,680.1 799.4,680.1 761.7,546.2 	"/>
-	<polygon class="st1" points="379.7,619.1 510.1,845 607.2,745.4 621.5,695.5 511.9,695.5 	"/>
-	<polygon class="st1" points="353.1,451 222.7,676.9 357.5,711.2 407.9,698.6 353.1,603.7 	"/>
-	<polygon class="st1" points="298.3,515.1 353.2,420.2 485.4,343.9 224.6,343.9 262.3,477.8 	"/>
+	<defs>
+		<circle id="SVGID_1_" cx="512" cy="512" r="512"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="6.707" y1="1020.6476" x2="1006.3564" y2="14.3617" gradientTransform="matrix(1 0 0 -1 0 1024)">
+		<stop  offset="0" style="stop-color:#FF444D"/>
+		<stop  offset="0.1675" style="stop-color:#FF3459"/>
+		<stop  offset="0.4337" style="stop-color:#FF2168"/>
+		<stop  offset="0.7079" style="stop-color:#FF1670"/>
+		<stop  offset="1" style="stop-color:#FF1273"/>
+	</linearGradient>
+	<rect class="st0" width="1024" height="1024"/>
+	<g class="st1">
+		<polygon class="st2" points="644.3,404.9 513.9,179 416.8,278.6 402.5,328.5 512.1,328.5 		"/>
+		<polygon class="st2" points="670.9,573 801.3,347.1 666.5,312.8 616.1,325.4 670.9,420.3 		"/>
+		<polygon class="st2" points="725.7,508.9 670.8,603.8 538.6,680.1 799.4,680.1 761.7,546.2 		"/>
+		<polygon class="st2" points="379.7,619.1 510.1,845 607.2,745.4 621.5,695.5 511.9,695.5 		"/>
+		<polygon class="st2" points="353.1,451 222.7,676.9 357.5,711.2 407.9,698.6 353.1,603.7 		"/>
+		<polygon class="st2" points="298.3,515.1 353.2,420.2 485.4,343.9 224.6,343.9 262.3,477.8 		"/>
+	</g>
 </g>
 </svg>
